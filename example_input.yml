@@ -1,0 +1,9 @@
+bedfile: null
+input_bam_case: null
+input_cosmicCount_vcf: null
+input_cosmicprevalence_vcf: null
+output_maf: null
+reference_fasta: null
+retain_info: null
+sample_name: null
+vardict_allele_frequency_threshold: null
