@@ -10,75 +10,75 @@ inputs:
     type: File
     secondaryFiles:
       - .fai
-    'sbg:x': -562.599365234375
-    'sbg:y': -212.5
+    'sbg:x': 0
+    'sbg:y': 255.59375
   - id: input_bam_case
     type: File
     secondaryFiles:
       - ^.bai
-    'sbg:x': -517.599365234375
-    'sbg:y': -39.5
+    'sbg:x': 0
+    'sbg:y': 362.390625
   - id: input_cosmicprevalence_vcf
     type: File
-    'sbg:x': -217.59912109375
-    'sbg:y': 186.5
+    'sbg:x': 250.34375
+    'sbg:y': 617.984375
   - id: input_cosmicCount_vcf
     type: File
-    'sbg:x': -85.59912109375
-    'sbg:y': 420.499267578125
+    'sbg:x': 250.34375
+    'sbg:y': 724.78125
   - id: bedfile
     type: File?
-    'sbg:x': -625.6339721679688
-    'sbg:y': -111.44763946533203
+    'sbg:x': 0
+    'sbg:y': 575.984375
   - id: sample_name
     type: string
-    'sbg:x': -473.7927551269531
-    'sbg:y': -336.8258361816406
+    'sbg:x': 351.93536376953125
+    'sbg:y': -68.43721008300781
   - id: vardict_allele_frequency_threshold
     type: float?
-    'sbg:x': -611.3988647460938
-    'sbg:y': -295.3067626953125
+    'sbg:x': 43.350860595703125
+    'sbg:y': -30.477481842041016
   - id: output_maf
     type: string?
-    'sbg:x': -338.9090270996094
-    'sbg:y': 102.78582000732422
+    'sbg:x': 250.34375
+    'sbg:y': 511.1875
   - id: retain_info
     type: string?
-    'sbg:x': -16.10749053955078
-    'sbg:y': 13.191929817199707
+    'sbg:x': 250.34375
+    'sbg:y': 404.390625
   - id: concat_output_name
     type: string
-    'sbg:x': -678.8388061523438
-    'sbg:y': -10.524100303649902
+    'sbg:x': 0
+    'sbg:y': 469.1875
   - id: vardict_output_vcf_name
     type: string?
-    'sbg:x': -276.9641418457031
-    'sbg:y': -454.362060546875
+    'sbg:x': 0
+    'sbg:y': 148.796875
 outputs:
   - id: txt
     outputSource:
       - run_processed_vardict/txt
     type: File
-    'sbg:x': -249.59933471679688
-    'sbg:y': -250.5
+    'sbg:x': 680.5177001953125
+    'sbg:y': 415.7890625
   - id: vcf2maf_maf
     outputSource:
       - variant_annotation/vcf2maf_maf
     type: File
-    'sbg:x': 312.40087890625
-    'sbg:y': 44.4992790222168
+    'sbg:x': 1161.72265625
+    'sbg:y': 255.59375
   - id: cosmicCount_annotatedOutput
     outputSource:
       - variant_annotation/cosmicCount_annotatedOutput
     type: File
-    'sbg:x': 419.40087890625
-    'sbg:y': 185.49928283691406
+    'sbg:x': 1161.72265625
+    'sbg:y': 362.390625
   - id: annotatedOutput_prevalence
     outputSource:
       - variant_annotation/annotatedOutput_prevalence
     type: File
-    'sbg:x': 282.40087890625
-    'sbg:y': 340.4985656738281
+    'sbg:x': 1161.72265625
+    'sbg:y': 469.1875
 steps:
   - id: run_processed_vardict
     in:
@@ -103,8 +103,8 @@ steps:
       - id: concatenated_vcf
     run: subworkflows/vardict_workflow/run_processed_vardict.cwl
     label: run_processed_vardict.cwl
-    'sbg:x': -377.6015625
-    'sbg:y': -153.5
+    'sbg:x': 250.34375
+    'sbg:y': 255.59375
   - id: variant_annotation
     in:
       - id: input_cosmicCount_vcf
@@ -129,8 +129,8 @@ steps:
       - id: vcf2maf_maf
     run: subworkflows/variant_annotation/variant_annotation.cwl
     label: variant_annotation
-    'sbg:x': 174.40066528320312
-    'sbg:y': 187.5
+    'sbg:x': 680.5177001953125
+    'sbg:y': 259.9921875
 requirements:
   - class: SubworkflowFeatureRequirement
 $schemas:
