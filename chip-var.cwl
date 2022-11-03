@@ -46,6 +46,10 @@ inputs:
     type: string
     'sbg:x': -678.8388061523438
     'sbg:y': -10.524100303649902
+  - id: ref_fasta
+    type: File?
+    'sbg:x': -485.09576416015625
+    'sbg:y': 476.9649658203125
 outputs:
   - id: txt
     outputSource:
@@ -112,7 +116,7 @@ steps:
       - id: tumor_id
         source: sample_name
       - id: ref_fasta
-        source: reference_fasta
+        source: ref_fasta
     out:
       - id: cosmicCount_annotatedOutput
       - id: annotatedOutput_prevalence
