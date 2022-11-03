@@ -42,6 +42,10 @@ inputs:
     type: string?
     'sbg:x': -16.10749053955078
     'sbg:y': 13.191929817199707
+  - id: concat_output_name
+    type: string
+    'sbg:x': -678.8388061523438
+    'sbg:y': -10.524100303649902
 outputs:
   - id: txt
     outputSource:
@@ -78,6 +82,10 @@ steps:
         source: bedfile
       - id: sample_name
         source: sample_name
+      - id: concat_output_name
+        source: concat_output_name
+      - id: stdout
+        default: true
       - id: vardict_allele_frequency_threshold
         source: vardict_allele_frequency_threshold
     out:
@@ -133,6 +141,5 @@ $schemas:
     's:email': 'mailto:shahr@mskcc.org'
     's:identifier': ''
     's:name': Ronak Shah
-'s:dateCreated': '2020-11-3'
+'s:dateCreated': 2020-11-3
 's:license': 'https://spdx.org/licenses/Apache-2.0'
-
