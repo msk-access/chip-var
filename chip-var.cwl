@@ -8,10 +8,14 @@ $namespaces:
 inputs:
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     'sbg:x': -562.599365234375
     'sbg:y': -212.5
   - id: input_bam_case
     type: File
+    secondaryFiles:
+      - ^.bai
     'sbg:x': -517.599365234375
     'sbg:y': -39.5
   - id: input_cosmicprevalence_vcf
