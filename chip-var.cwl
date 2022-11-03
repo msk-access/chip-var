@@ -50,6 +50,10 @@ inputs:
     type: string
     'sbg:x': -678.8388061523438
     'sbg:y': -10.524100303649902
+  - id: vardict_output_vcf_name
+    type: string?
+    'sbg:x': -276.9641418457031
+    'sbg:y': -454.362060546875
 outputs:
   - id: txt
     outputSource:
@@ -90,6 +94,8 @@ steps:
         source: concat_output_name
       - id: stdout
         default: true
+      - id: vardict_output_vcf_name
+        source: vardict_output_vcf_name
       - id: vardict_allele_frequency_threshold
         source: vardict_allele_frequency_threshold
     out:
