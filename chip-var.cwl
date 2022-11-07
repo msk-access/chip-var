@@ -20,10 +20,14 @@ inputs:
     'sbg:y': 362.390625
   - id: input_cosmicprevalence_vcf
     type: File
+    secondaryFiles:
+      - ^.tbi
     'sbg:x': 250.34375
     'sbg:y': 617.984375
   - id: input_cosmicCount_vcf
     type: File
+    secondaryFiles:
+      - ^.tbi
     'sbg:x': 250.34375
     'sbg:y': 724.78125
   - id: bedfile
@@ -59,8 +63,8 @@ outputs:
     outputSource:
       - run_processed_vardict/txt
     type: File
-    'sbg:x': 680.5177001953125
-    'sbg:y': 415.7890625
+    'sbg:x': 618.2928466796875
+    'sbg:y': 461.5052795410156
   - id: vcf2maf_maf
     outputSource:
       - variant_annotation/vcf2maf_maf
