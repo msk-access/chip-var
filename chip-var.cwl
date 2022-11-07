@@ -21,15 +21,15 @@ inputs:
   - id: input_cosmicprevalence_vcf
     type: File
     secondaryFiles:
-      - ^.tbi
+      - .tbi
     'sbg:x': 250.34375
     'sbg:y': 617.984375
   - id: input_cosmicCount_vcf
     type: File
     secondaryFiles:
-      - ^.tbi
-    'sbg:x': 250.34375
-    'sbg:y': 724.78125
+      - .tbi
+    'sbg:x': 250
+    'sbg:y': 722.6275024414062
   - id: bedfile
     type: File?
     'sbg:x': 0
