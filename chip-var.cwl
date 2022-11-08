@@ -130,7 +130,6 @@ steps:
       - id: tumor_id
         source: sample_name
       - id: ref_fasta
-        default: '/.vep/homo_sapiens/105_GRCh37/Homo_sapiens.GRCh37.dna.toplevel.fa.gz'
         source: ref_fasta
     out:
       - id: cosmicCount_annotatedOutput
