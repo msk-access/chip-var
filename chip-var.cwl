@@ -58,6 +58,14 @@ inputs:
     type: string?
     'sbg:x': 269.4173583984375
     'sbg:y': 591.1446533203125
+  - id: snpsift_prevalOpName
+    type: string?
+    'sbg:x': 103.91754913330078
+    'sbg:y': 804.9908447265625
+  - id: snpsift_countOpName
+    type: string?
+    'sbg:x': 296.3465881347656
+    'sbg:y': 956.4717407226562
 outputs:
   - id: txt
     outputSource:
@@ -125,6 +133,10 @@ steps:
         source: retain_info
       - id: tumor_id
         source: sample_name
+      - id: snpsift_countOpName
+        source: snpsift_countOpName
+      - id: snpsift_prevalOpName
+        source: snpsift_prevalOpName
     out:
       - id: cosmicCount_annotatedOutput
       - id: annotatedOutput_prevalence
