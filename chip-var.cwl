@@ -18,18 +18,6 @@ inputs:
       - ^.bai
     'sbg:x': 0
     'sbg:y': 362.390625
-  - id: input_cosmicprevalence_vcf
-    type: File
-    secondaryFiles:
-      - .tbi
-    'sbg:x': 250.34375
-    'sbg:y': 617.984375
-  - id: input_cosmicCount_vcf
-    type: File
-    secondaryFiles:
-      - .tbi
-    'sbg:x': 250
-    'sbg:y': 722.6275024414062
   - id: bedfile
     type: File?
     'sbg:x': 0
@@ -42,10 +30,6 @@ inputs:
     type: float?
     'sbg:x': 43.350860595703125
     'sbg:y': -30.477481842041016
-  - id: output_maf
-    type: string?
-    'sbg:x': 250.34375
-    'sbg:y': 511.1875
   - id: retain_info
     type: string?
     'sbg:x': 250.34375
@@ -58,6 +42,18 @@ inputs:
     type: string?
     'sbg:x': 0
     'sbg:y': 148.796875
+  - id: input_cosmicprevalenceDB_vcf
+    type: File
+    'sbg:x': 429.5189208984375
+    'sbg:y': 694.980224609375
+  - id: input_cosmicCountDB_vcf
+    type: File
+    'sbg:x': 526.7509765625
+    'sbg:y': 971.5999755859375
+  - id: output_mafName
+    type: string?
+    'sbg:x': 269.4173583984375
+    'sbg:y': 591.1446533203125
 outputs:
   - id: txt
     outputSource:
@@ -111,16 +107,16 @@ steps:
     'sbg:y': 255.59375
   - id: variant_annotation
     in:
-      - id: input_cosmicCount_vcf
-        source: input_cosmicCount_vcf
+      - id: input_cosmicCountDB_vcf
+        source: input_cosmicCountDB_vcf
       - id: vardict_input_vcf
         source: run_processed_vardict/concatenated_vcf
-      - id: input_cosmicprevalence_vcf
-        source: input_cosmicprevalence_vcf
+      - id: input_cosmicprevalenceDB_vcf
+        source: input_cosmicprevalenceDB_vcf
       - id: min_hom_vaf
         source: vardict_allele_frequency_threshold
-      - id: output_maf
-        source: output_maf
+      - id: output_mafName
+        source: output_mafName
       - id: retain_info
         source: retain_info
       - id: tumor_id
@@ -131,8 +127,8 @@ steps:
       - id: vcf2maf_maf
     run: subworkflows/variant_annotation/variant_annotation.cwl
     label: variant_annotation
-    'sbg:x': 780.1068725585938
-    'sbg:y': 243.58778381347656
+    'sbg:x': 843.2305297851562
+    'sbg:y': 256.8316650390625
 requirements:
   - class: SubworkflowFeatureRequirement
 $schemas:
