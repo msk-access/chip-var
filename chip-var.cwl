@@ -44,10 +44,14 @@ inputs:
     'sbg:y': 148.796875
   - id: input_cosmicprevalenceDB_vcf
     type: File
+    secondaryFiles:
+      - .tbi
     'sbg:x': 429.5189208984375
     'sbg:y': 694.980224609375
   - id: input_cosmicCountDB_vcf
     type: File
+    secondaryFiles:
+      - .tbi
     'sbg:x': 526.7509765625
     'sbg:y': 971.5999755859375
   - id: output_mafName
