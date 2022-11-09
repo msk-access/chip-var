@@ -58,10 +58,6 @@ inputs:
     type: string?
     'sbg:x': 0
     'sbg:y': 148.796875
-  - id: ref_fasta
-    type: File?
-    'sbg:x': 563
-    'sbg:y': 875.3963623046875
 outputs:
   - id: txt
     outputSource:
@@ -129,16 +125,14 @@ steps:
         source: retain_info
       - id: tumor_id
         source: sample_name
-      - id: ref_fasta
-        source: ref_fasta
     out:
       - id: cosmicCount_annotatedOutput
       - id: annotatedOutput_prevalence
       - id: vcf2maf_maf
     run: subworkflows/variant_annotation/variant_annotation.cwl
     label: variant_annotation
-    'sbg:x': 724.9024658203125
-    'sbg:y': 250.98170471191406
+    'sbg:x': 780.1068725585938
+    'sbg:y': 243.58778381347656
 requirements:
   - class: SubworkflowFeatureRequirement
 $schemas:
