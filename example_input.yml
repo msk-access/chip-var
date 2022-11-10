@@ -1,9 +1,28 @@
-bedfile: null
-input_bam_case: null
-input_cosmicCount_vcf: null
-input_cosmicprevalence_vcf: null
-output_maf: null
-reference_fasta: null
-retain_info: null
-sample_name: null
-vardict_allele_frequency_threshold: null
+bedfile:
+  class: File
+  path: >-
+    /work/bergerm1/bergerlab/charalk/projects/nucleo_qc/qc_generation_testing/CH_target_3bp.bed
+input_bam_case: 
+  class: File
+  path: >-
+    /path/to/bam/file.bam
+input_cosmicCountDB_vcf: 
+  class: File
+  path: >-
+    /work/cch/production/resources/cosmic/versions/v96/CosmicCodingMuts.vcf.gz
+input_cosmicprevalenceDB_vcf: 
+  class: File
+  path: >-
+    /work/cch/production/resources/cosmic/versions/v96/CosmicCodingMuts_GRCh37_processed.vcf.gz
+output_mafName: sampleName_chip-var.maf
+reference_fasta: 
+ class: File
+ path: >-
+    /juno/work/access/production/resources/reference/current/Homo_sapiens_assembly19.fasta
+concat_output_name: sampleName_concat.vcf.gz
+retain_info:  CNT,TUMOR_TYPE
+sample_name: sampleName
+vardict_allele_frequency_threshold: 0
+vardict_output_vcf_name: sampleName_vardict.vcf
+snpsift_countOpName: sampleName_snpsift_cosmic.vcf
+snpsift_prevalOpName: sampleName_snpsift_preval.vcf
