@@ -2,7 +2,7 @@
 This is a workflow for calling and annotating CHIP variants. 
 The workflow calls the variants from the BAM file using vardict, which are then filtered based on the simple sample filtering criteria. The filtered variants are then processed, by sorting and normalizing and concating the complex and normal variants into a single VCF file. The concated variants are annotated with COSMIC prevalence counts and converted from VCF to MAF file format. 
 
-
+For detailed documentation refer to https://cmo-ci.gitbook.io/chip-variant-calling-and-processing/
 
 ### Workflows used
 
