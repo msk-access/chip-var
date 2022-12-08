@@ -23,9 +23,10 @@ usage: chip-var.cwl -h
        [--vardict_output_vcf_name VARDICT_OUTPUT_VCF_NAME]
        --input_cosmicprevalenceDB_vcf INPUT_COSMICPREVALENCEDB_VCF
        --input_cosmicCountDB_vcf INPUT_COSMICCOUNTDB_VCF
-       [--output_mafName OUTPUT_MAFNAME]
+       [--output_vcf2mafName OUTPUT_VCF2MAFNAME]
        [--snpsift_prevalOpName SNPSIFT_PREVALOPNAME]
-       [--snpsift_countOpName SNPSIFT_COUNTOPNAME]
+       [--snpsift_countOpName SNPSIFT_COUNTOPNAME] --opOncoKbMafName
+       OPONCOKBMAFNAME --oncoKbApiToken ONCOKBAPITOKEN
        [job_order]
 
 positional arguments:
@@ -43,8 +44,10 @@ optional arguments:
   --vardict_output_vcf_name VARDICT_OUTPUT_VCF_NAME
   --input_cosmicprevalenceDB_vcf INPUT_COSMICPREVALENCEDB_VCF
   --input_cosmicCountDB_vcf INPUT_COSMICCOUNTDB_VCF
-  --output_mafName OUTPUT_MAFNAME
+  --output_vcf2mafName OUTPUT_VCF2MAFNAME
   --snpsift_prevalOpName SNPSIFT_PREVALOPNAME
   --snpsift_countOpName SNPSIFT_COUNTOPNAME
+  --opOncoKbMafName OPONCOKBMAFNAME
+  --oncoKbApiToken ONCOKBAPITOKEN
 ```
 
