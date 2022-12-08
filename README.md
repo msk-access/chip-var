@@ -1,15 +1,16 @@
 # chip-var
 This is a workflow for calling and annotating CHIP variants. 
-The workflow calls the variants from the BAM file using vardict, which are then filtered based on the simple sample filtering criteria. The filtered variants are then processed, by sorting and normalizing and concating the complex and normal variants into a single VCF file. The concated variants are annotated with COSMIC prevalence counts and converted from VCF to MAF file format. 
+The workflow calls the variants from the BAM file using vardict, which are then filtered based on the simple sample filtering criteria. The filtered variants are then processed, by sorting and normalizing and concating the complex and normal variants into a single VCF file. The concated variants are annotated with COSMIC prevalence counts,converted from VCF to MAF file format and then annotated with oncoKB.
 
 For detailed documentation refer to https://cmo-ci.gitbook.io/chip-variant-calling-and-processing/
 
 ### Workflows used
 
-- [vardict workflow](https://msk-access.gitbook.io/subworkflows/)
+- [vardict workflow](https://msk-access.gitbook.io/subworkflows/vardict_workflow)
 - [bcftools tabix](https://msk-access.gitbook.io/command-line-tools-cwl/bcftools_1.15.1/)
 - [bcftools norm](https://msk-access.gitbook.io/command-line-tools-cwl/bcftools_1.15.1/)
 - [bcftools sort](https://msk-access.gitbook.io/command-line-tools-cwl/bcftools_1.15.1/)
+- [variant_annotation](https://msk-access.gitbook.io/subworkflows/variant_annotation)
 
 #### Usage
 

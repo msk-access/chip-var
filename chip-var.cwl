@@ -54,7 +54,7 @@ inputs:
       - .tbi
     'sbg:x': 250.328125
     'sbg:y': 939.5
-  - id: output_mafName
+  - id: output_vcf2mafName
     type: string?
     'sbg:x': 250.328125
     'sbg:y': 725.625
@@ -66,19 +66,21 @@ inputs:
     type: string?
     'sbg:x': 250.328125
     'sbg:y': 213.875
+  - id: opOncoKbMafName
+    type: string
+    'sbg:x': 313.7685852050781
+    'sbg:y': 1069.3170166015625
+  - id: oncoKbApiToken
+    type: string
+    'sbg:x': 358.0677185058594
+    'sbg:y': 1258.61767578125
 outputs:
   - id: vardict_txt
     outputSource:
       - run_processed_vardict/txt
     type: File
-    'sbg:x': 680.5020751953125
-    'sbg:y': 523.21875
-  - id: vcf2maf_maf
-    outputSource:
-      - variant_annotation/vcf2maf_maf
-    type: File
-    'sbg:x': 1187.130126953125
-    'sbg:y': 362.8125
+    'sbg:x': 595.7510375976562
+    'sbg:y': 759.334716796875
   - id: cosmicCount_annotatedOutput
     outputSource:
       - variant_annotation/cosmicCount_annotatedOutput
@@ -91,6 +93,12 @@ outputs:
     type: File
     'sbg:x': 1187.130126953125
     'sbg:y': 576.6875
+  - id: opOncoKbMaf
+    outputSource:
+      - variant_annotation/opOncoKbMaf
+    type: File?
+    'sbg:x': 1124.5281982421875
+    'sbg:y': 326.3994445800781
 steps:
   - id: run_processed_vardict
     in:
@@ -128,7 +136,7 @@ steps:
       - id: min_hom_vaf
         source: vardict_allele_frequency_threshold
       - id: output_mafName
-        source: output_mafName
+        source: output_vcf2mafName
       - id: retain_info
         source: retain_info
       - id: tumor_id
@@ -137,10 +145,14 @@ steps:
         source: snpsift_countOpName
       - id: snpsift_prevalOpName
         source: snpsift_prevalOpName
+      - id: opOncoKbMafName
+        source: opOncoKbMafName
+      - id: oncoKbApiToken
+        source: oncoKbApiToken
     out:
       - id: cosmicCount_annotatedOutput
       - id: annotatedOutput_prevalence
-      - id: vcf2maf_maf
+      - id: opOncoKbMaf
     run: subworkflows/variant_annotation/variant_annotation.cwl
     label: variant_annotation
     'sbg:x': 680.5020751953125

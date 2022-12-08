@@ -14,7 +14,7 @@ input_cosmicprevalenceDB_vcf:
   class: File
   path: >-
     /work/cch/production/resources/cosmic/versions/v96/CosmicCodingMuts_GRCh37_processed.vcf.gz
-output_mafName: sampleName_chip-var.maf
+output_vcf2mafName: sampleName_chip-var.maf
 reference_fasta: 
  class: File
  path: >-
@@ -26,3 +26,6 @@ vardict_allele_frequency_threshold: 0
 vardict_output_vcf_name: sampleName_vardict.vcf
 snpsift_countOpName: sampleName_snpsift_cosmic.vcf
 snpsift_prevalOpName: sampleName_snpsift_preval.vcf
+oncoKbApiToken: 111d111-token123
+opOncoKbMafName: testOnco.maf
+
