@@ -16,7 +16,7 @@ For detailed documentation refer to https://cmo-ci.gitbook.io/chip-variant-calli
 
 ```shell
 usage: chip-var.cwl -h
-       --reference_fasta REFERENCE_FASTA --input_bam_case INPUT_BAM_CASE
+        --reference_fasta REFERENCE_FASTA --input_bam_case INPUT_BAM_CASE
        [--bedfile BEDFILE] --sample_name SAMPLE_NAME
        [--vardict_allele_frequency_threshold VARDICT_ALLELE_FREQUENCY_THRESHOLD]
        [--retain_info RETAIN_INFO] --concat_output_name CONCAT_OUTPUT_NAME
@@ -27,6 +27,7 @@ usage: chip-var.cwl -h
        [--snpsift_prevalOpName SNPSIFT_PREVALOPNAME]
        [--snpsift_countOpName SNPSIFT_COUNTOPNAME] --opOncoKbMafName
        OPONCOKBMAFNAME --oncoKbApiToken ONCOKBAPITOKEN
+       [--oncoKbAnnotateHotspots]
        [job_order]
 
 positional arguments:
@@ -49,5 +50,6 @@ optional arguments:
   --snpsift_countOpName SNPSIFT_COUNTOPNAME
   --opOncoKbMafName OPONCOKBMAFNAME
   --oncoKbApiToken ONCOKBAPITOKEN
+  --oncoKbAnnotateHotspots
 ```
 
