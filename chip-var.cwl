@@ -71,9 +71,13 @@ inputs:
     'sbg:x': 313.7685852050781
     'sbg:y': 1069.3170166015625
   - id: oncoKbApiToken
-    type: string
-    'sbg:x': 358.0677185058594
-    'sbg:y': 1258.61767578125
+    type: File
+    'sbg:x': 425.1004638671875
+    'sbg:y': 1101.21533203125
+  - id: oncoKbAnnotateHotspots
+    type: boolean?
+    'sbg:x': 525.1845092773438
+    'sbg:y': 1227.406982421875
 outputs:
   - id: vardict_txt
     outputSource:
@@ -149,6 +153,8 @@ steps:
         source: opOncoKbMafName
       - id: oncoKbApiToken
         source: oncoKbApiToken
+      - id: oncoKbAnnotateHotspots
+        source: oncoKbAnnotateHotspots
     out:
       - id: cosmicCount_annotatedOutput
       - id: annotatedOutput_prevalence

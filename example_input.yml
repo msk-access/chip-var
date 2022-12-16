@@ -26,6 +26,9 @@ vardict_allele_frequency_threshold: 0
 vardict_output_vcf_name: sampleName_vardict.vcf
 snpsift_countOpName: sampleName_snpsift_cosmic.vcf
 snpsift_prevalOpName: sampleName_snpsift_preval.vcf
-oncoKbApiToken: 111d111-token123
+oncoKbApiToken: 
+  class: File
+  Path: /path/to/the oncoKb/apiToken.txt
 opOncoKbMafName: testOnco.maf
+oncoKbAnnotateHotspots: TRUE
 
