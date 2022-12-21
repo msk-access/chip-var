@@ -103,6 +103,12 @@ outputs:
     type: File?
     'sbg:x': 1124.5281982421875
     'sbg:y': 326.3994445800781
+  - id: concatenated_vcf
+    outputSource:
+      - run_processed_vardict/concatenated_vcf
+    type: File
+    'sbg:x': 710.38134765625
+    'sbg:y': 731.8944091796875
 steps:
   - id: run_processed_vardict
     in:
