@@ -26,3 +26,13 @@ vardict_allele_frequency_threshold: 0
 vardict_output_vcf_name: sampleName_vardict.vcf
 snpsift_countOpName: sampleName_snpsift_cosmic.vcf
 snpsift_prevalOpName: sampleName_snpsift_preval.vcf
+column_name_DUST: DUST
+column_name_complexity: complexity
+input_DUST_bed:
+  class: File
+  path: /path/to/DUST/file.bed
+input_complexity_bed:
+  class: File
+  path: /path/to/complexity/file.bed
+output_DUST_filename: sampleName_dust
+output_complexity_filename: sampleName_complexity

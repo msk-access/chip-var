@@ -11,21 +11,21 @@ inputs:
     secondaryFiles:
       - .fai
     'sbg:x': 0
-    'sbg:y': 362.8125
+    'sbg:y': 628.875
   - id: input_bam_case
     type: File
     secondaryFiles:
       - ^.bai
     'sbg:x': 0
-    'sbg:y': 469.75
+    'sbg:y': 735.5625
   - id: bedfile
     type: File?
     'sbg:x': 0
-    'sbg:y': 683.625
+    'sbg:y': 948.9375
   - id: sample_name
     type: string
     'sbg:x': 250.328125
-    'sbg:y': 320.8125
+    'sbg:y': 320.0859375
   - id: vardict_allele_frequency_threshold
     type: float?
     'sbg:x': 250.328125
@@ -33,64 +33,96 @@ inputs:
   - id: retain_info
     type: string?
     'sbg:x': 250.328125
-    'sbg:y': 618.6875
+    'sbg:y': 617.4609375
   - id: concat_output_name
     type: string
     'sbg:x': 0
-    'sbg:y': 576.6875
+    'sbg:y': 842.25
   - id: vardict_output_vcf_name
     type: string?
     'sbg:x': 0
-    'sbg:y': 255.875
+    'sbg:y': 522.1875
   - id: input_cosmicprevalenceDB_vcf
     type: File
     secondaryFiles:
       - .tbi
     'sbg:x': 250.328125
-    'sbg:y': 832.5625
+    'sbg:y': 1044.2578125
   - id: input_cosmicCountDB_vcf
     type: File
     secondaryFiles:
       - .tbi
     'sbg:x': 250.328125
-    'sbg:y': 939.5
-  - id: output_mafName
-    type: string?
-    'sbg:x': 250.328125
-    'sbg:y': 725.625
+    'sbg:y': 1150.9453125
   - id: snpsift_prevalOpName
     type: string?
     'sbg:x': 250.328125
-    'sbg:y': 106.9375
+    'sbg:y': 106.7109375
   - id: snpsift_countOpName
     type: string?
     'sbg:x': 250.328125
-    'sbg:y': 213.875
+    'sbg:y': 213.3984375
+  - id: input_DUST_bed
+    type: File
+    'sbg:x': 250.328125
+    'sbg:y': 937.5703125
+  - id: input_complexity_bed
+    type: File
+    'sbg:x': 250.328125
+    'sbg:y': 1257.65625
+  - id: output_DUST_filename
+    type: string?
+    'sbg:x': 250.328125
+    'sbg:y': 724.1484375
+  - id: column_name_DUST
+    type: string?
+    'sbg:x': 250.328125
+    'sbg:y': 1364.3671875
+  - id: output_complexity_filename
+    type: string?
+    'sbg:x': 250.328125
+    'sbg:y': 830.859375
+  - id: column_name_complexity
+    type: string?
+    'sbg:x': 250.328125
+    'sbg:y': 1471.078125
 outputs:
   - id: vardict_txt
     outputSource:
       - run_processed_vardict/txt
     type: File
     'sbg:x': 680.5020751953125
-    'sbg:y': 523.21875
+    'sbg:y': 788.90625
   - id: vcf2maf_maf
     outputSource:
       - variant_annotation/vcf2maf_maf
     type: File
-    'sbg:x': 1187.130126953125
-    'sbg:y': 362.8125
+    'sbg:x': 1270.0546875
+    'sbg:y': 522.1640625
   - id: cosmicCount_annotatedOutput
     outputSource:
       - variant_annotation/cosmicCount_annotatedOutput
     type: File
-    'sbg:x': 1187.130126953125
-    'sbg:y': 469.75
+    'sbg:x': 1270.0546875
+    'sbg:y': 842.2734375
   - id: annotatedOutput_prevalence
     outputSource:
       - variant_annotation/annotatedOutput_prevalence
     type: File
-    'sbg:x': 1187.130126953125
-    'sbg:y': 576.6875
+    'sbg:x': 1270.0546875
+    'sbg:y': 948.9609375
+  - id: output_DUST_maf
+    outputSource:
+      - variant_annotation/output
+    type: File
+    'sbg:x': 1270.0546875
+    'sbg:y': 628.8515625
+  - id: output_complexity_maf
+    outputSource:
+      - variant_annotation/output_complexity_maf
+    type: File
+    'sbg:x': 1270.0546875
+    'sbg:y': 735.5625
 steps:
   - id: run_processed_vardict
     in:
@@ -116,7 +148,7 @@ steps:
     run: subworkflows/vardict_workflow/run_processed_vardict.cwl
     label: run_processed_vardict.cwl
     'sbg:x': 250.328125
-    'sbg:y': 469.75
+    'sbg:y': 468.7734375
   - id: variant_annotation
     in:
       - id: input_cosmicCountDB_vcf
@@ -127,8 +159,6 @@ steps:
         source: input_cosmicprevalenceDB_vcf
       - id: min_hom_vaf
         source: vardict_allele_frequency_threshold
-      - id: output_mafName
-        source: output_mafName
       - id: retain_info
         source: retain_info
       - id: tumor_id
@@ -137,14 +167,28 @@ steps:
         source: snpsift_countOpName
       - id: snpsift_prevalOpName
         source: snpsift_prevalOpName
+      - id: input_complexity_bed
+        source: input_complexity_bed
+      - id: input_DUST_bed
+        source: input_DUST_bed
+      - id: output_DUST_filename
+        source: output_DUST_filename
+      - id: column_name_DUST
+        source: column_name_DUST
+      - id: output_complexity_filename
+        source: output_complexity_filename
+      - id: column_name_complexity
+        source: column_name_complexity
     out:
       - id: cosmicCount_annotatedOutput
       - id: annotatedOutput_prevalence
       - id: vcf2maf_maf
+      - id: output
+      - id: output_complexity_maf
     run: subworkflows/variant_annotation/variant_annotation.cwl
     label: variant_annotation
     'sbg:x': 680.5020751953125
-    'sbg:y': 360.28125
+    'sbg:y': 584.21875
 requirements:
   - class: SubworkflowFeatureRequirement
 $schemas:
