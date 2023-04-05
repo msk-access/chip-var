@@ -88,19 +88,23 @@ inputs:
     'sbg:y': 1471.078125
   - id: oncoKbApiToken
     type: File
-    'sbg:x': 479.1190185546875
-    'sbg:y': 1215.01416015625
+    'sbg:x': 521.0426025390625
+    'sbg:y': 1303.28955078125
   - id: opOncoKbMafName
     type: string
     'sbg:x': 673.2667846679688
     'sbg:y': 1289.59326171875
+  - id: output_vcf2mafName
+    type: string?
+    'sbg:x': 589.9828491210938
+    'sbg:y': 1571.9603271484375
 outputs:
   - id: vardict_txt
     outputSource:
       - run_processed_vardict/txt
     type: File
-    'sbg:x': 684.2042846679688
-    'sbg:y': 963.1776123046875
+    'sbg:x': 843.761962890625
+    'sbg:y': 1115.7548828125
   - id: vcf2maf_maf
     outputSource:
       - variant_annotation/vcf2maf_maf
@@ -167,6 +171,8 @@ steps:
         source: input_cosmicprevalenceDB_vcf
       - id: min_hom_vaf
         source: vardict_allele_frequency_threshold
+      - id: output_vcf2mafName
+        source: output_vcf2mafName
       - id: retain_info
         source: retain_info
       - id: tumor_id
