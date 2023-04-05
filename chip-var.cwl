@@ -90,6 +90,10 @@ inputs:
     type: File
     'sbg:x': 479.1190185546875
     'sbg:y': 1215.01416015625
+  - id: opOncoKbMafName
+    type: string
+    'sbg:x': 673.2667846679688
+    'sbg:y': 1289.59326171875
 outputs:
   - id: vardict_txt
     outputSource:
@@ -171,6 +175,8 @@ steps:
         source: snpsift_countOpName
       - id: snpsift_prevalOpName
         source: snpsift_prevalOpName
+      - id: opOncoKbMafName
+        source: opOncoKbMafName
       - id: oncoKbApiToken
         source: oncoKbApiToken
       - id: input_complexity_bed
