@@ -62,22 +62,10 @@ inputs:
     type: string?
     'sbg:x': 250.328125
     'sbg:y': 213.3984375
-  - id: input_DUST_bed
-    type: File
-    'sbg:x': 250.328125
-    'sbg:y': 937.5703125
   - id: input_complexity_bed
     type: File
     'sbg:x': 250.328125
     'sbg:y': 1257.65625
-  - id: output_DUST_filename
-    type: string?
-    'sbg:x': 250.328125
-    'sbg:y': 724.1484375
-  - id: column_name_DUST
-    type: string?
-    'sbg:x': 250.328125
-    'sbg:y': 1364.3671875
   - id: output_complexity_filename
     type: string?
     'sbg:x': 250.328125
@@ -98,6 +86,18 @@ inputs:
     type: string?
     'sbg:x': 589.9828491210938
     'sbg:y': 1571.9603271484375
+  - id: input_mappability_bed
+    type: File
+    'sbg:x': 461.7861633300781
+    'sbg:y': 723.7046508789062
+  - id: output_mappability_filename
+    type: string?
+    'sbg:x': 459.49005126953125
+    'sbg:y': 880.9884643554688
+  - id: column_name_mappability
+    type: string?
+    'sbg:x': 960.0429077148438
+    'sbg:y': 1075.010009765625
 outputs:
   - id: vardict_txt
     outputSource:
@@ -123,12 +123,6 @@ outputs:
     type: File
     'sbg:x': 1270.0546875
     'sbg:y': 948.9609375
-  - id: output_DUST_maf
-    outputSource:
-      - variant_annotation/output
-    type: File
-    'sbg:x': 1270.0546875
-    'sbg:y': 628.8515625
   - id: output_complexity_maf
     outputSource:
       - variant_annotation/output_complexity_maf
@@ -141,6 +135,12 @@ outputs:
     type: File
     'sbg:x': 669.528076171875
     'sbg:y': 130.18064880371094
+  - id: output_mappability_maf
+    outputSource:
+      - variant_annotation/output_mappability_maf
+    type: File
+    'sbg:x': 1479.5093994140625
+    'sbg:y': 615.8358154296875
 steps:
   - id: run_processed_vardict
     in:
@@ -191,28 +191,28 @@ steps:
         source: opOncoKbMafName
       - id: oncoKbApiToken
         source: oncoKbApiToken
+      - id: input_mappability_bed
+        source: input_mappability_bed
+      - id: output_mappability_filename
+        source: output_mappability_filename
+      - id: column_name_mappability
+        source: column_name_mappability
       - id: input_complexity_bed
         source: input_complexity_bed
-      - id: input_DUST_bed
-        source: input_DUST_bed
-      - id: output_DUST_filename
-        source: output_DUST_filename
-      - id: column_name_DUST
-        source: column_name_DUST
-      - id: output_complexity_filename
-        source: output_complexity_filename
       - id: column_name_complexity
         source: column_name_complexity
+      - id: output_complexity_filename
+        source: output_complexity_filename
     out:
       - id: cosmicCount_annotatedOutput
       - id: annotatedOutput_prevalence
       - id: vcf2maf_maf
-      - id: output
+      - id: output_mappability_maf
       - id: output_complexity_maf
     run: subworkflows/variant_annotation/variant_annotation.cwl
     label: variant_annotation
-    'sbg:x': 757.078125
-    'sbg:y': 648.4653930664062
+    'sbg:x': 982.0248413085938
+    'sbg:y': 671.8436889648438
 requirements:
   - class: SubworkflowFeatureRequirement
 $schemas:
