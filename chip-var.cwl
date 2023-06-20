@@ -121,8 +121,8 @@ outputs:
     outputSource:
       - variant_annotation/annotatedOutput_prevalence
     type: File
-    'sbg:x': 1270.0546875
-    'sbg:y': 948.9609375
+    'sbg:x': 1217.8419189453125
+    'sbg:y': 1237.104736328125
   - id: output_complexity_maf
     outputSource:
       - variant_annotation/output_complexity_maf
