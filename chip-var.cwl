@@ -141,6 +141,30 @@ outputs:
     type: File
     'sbg:x': 1479.5093994140625
     'sbg:y': 615.8358154296875
+  - id: vardict_output
+    outputSource:
+      - run_processed_vardict/vardict_output
+    type: File
+    'sbg:x': 976.8685302734375
+    'sbg:y': 276.0632019042969
+  - id: single_filter_vcf_complex
+    outputSource:
+      - run_processed_vardict/single_filter_vcf_complex
+    type: File
+    'sbg:x': 1285.3463134765625
+    'sbg:y': 317.7896423339844
+  - id: single_filter_vcf
+    outputSource:
+      - run_processed_vardict/single_filter_vcf
+    type: File
+    'sbg:x': 1501.4298095703125
+    'sbg:y': 441.47882080078125
+  - id: oncokb_maf
+    outputSource:
+      - variant_annotation/oncokb_maf
+    type: File?
+    'sbg:x': 1547.626953125
+    'sbg:y': 988.3935546875
 steps:
   - id: run_processed_vardict
     in:
@@ -163,10 +187,13 @@ steps:
     out:
       - id: txt
       - id: concatenated_vcf
+      - id: vardict_output
+      - id: single_filter_vcf
+      - id: single_filter_vcf_complex
     run: subworkflows/vardict_workflow/run_processed_vardict.cwl
     label: run_processed_vardict.cwl
-    'sbg:x': 250.328125
-    'sbg:y': 468.7734375
+    'sbg:x': 205.29307556152344
+    'sbg:y': 479.9218444824219
   - id: variant_annotation
     in:
       - id: input_cosmicCountDB_vcf
@@ -209,6 +236,7 @@ steps:
       - id: vcf2maf_maf
       - id: output_mappability_maf
       - id: output_complexity_maf
+      - id: oncokb_maf
     run: subworkflows/variant_annotation/variant_annotation.cwl
     label: variant_annotation
     'sbg:x': 982.0248413085938
