@@ -195,12 +195,6 @@ outputs:
     type: File?
     'sbg:x': 1866.210205078125
     'sbg:y': 910.9063720703125
-  - id: output
-    outputSource:
-      - variant_annotation/output
-    type: File
-    'sbg:x': 1802.1302490234375
-    'sbg:y': 1085.263427734375
   - id: output_maf_cmoch_tag
     outputSource:
       - chipvar_processing/output_maf_cmoch_tag
@@ -291,7 +285,6 @@ steps:
       - id: oncokb_maf
       - id: output_mapability_maf
       - id: output_complexity_maf
-      - id: output
       - id: output_hotspot_maf
       - id: output_47kchpd_maf
       - id: output_panmyeloid_maf
