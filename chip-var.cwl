@@ -110,6 +110,38 @@ inputs:
     type: File
     'sbg:x': 259.5205993652344
     'sbg:y': 1023.4912109375
+  - id: output_maf_name_tag
+    type: string?
+    'sbg:x': 2098.18798828125
+    'sbg:y': 319.1876525878906
+  - id: output_maf_name_filter
+    type: string?
+    'sbg:x': 1974.760986328125
+    'sbg:y': 441.22772216796875
+  - id: output_hotspot_maf_name
+    type: string?
+    'sbg:x': 207.65904235839844
+    'sbg:y': 852.5186157226562
+  - id: output_47kchpd_maf_name
+    type: string?
+    'sbg:x': 267.5868225097656
+    'sbg:y': 679.7606201171875
+  - id: output_maf_name_panmyeloid
+    type: string?
+    'sbg:x': 321.6727600097656
+    'sbg:y': 495.3136901855469
+  - id: output_column_name_panmyeloid
+    type: string?
+    'sbg:x': 23.615079879760742
+    'sbg:y': 1321.3515625
+  - id: output_column_name_47kchpd
+    type: string?
+    'sbg:x': 138.36264038085938
+    'sbg:y': 1500.9564208984375
+  - id: output_column_name_hotpsot
+    type: string?
+    'sbg:x': 474.290283203125
+    'sbg:y': 1577.4547119140625
 outputs:
   - id: vardict_txt
     outputSource:
@@ -274,10 +306,22 @@ steps:
         source: column_name_complexity
       - id: input_hotspot_tsv_file
         source: input_hotspot_tsv_file
+      - id: output_column_name_hotpsot
+        source: output_column_name_hotpsot
+      - id: output_hotspot_maf_name
+        source: output_hotspot_maf_name
       - id: input_47kchpd_tsv_file
         source: input_47kchpd_tsv_file
+      - id: output_47kchpd_maf_name
+        source: output_47kchpd_maf_name
+      - id: output_column_name_47kchpd
+        source: output_column_name_47kchpd
       - id: input_panmeloid_tsv_file
         source: input_panmeloid_tsv_file
+      - id: output_maf_name_panmyeloid
+        source: output_maf_name_panmyeloid
+      - id: output_column_name_panmyeloid
+        source: output_column_name_panmyeloid
     out:
       - id: cosmicCount_annotatedOutput
       - id: annotatedOutput_prevalence
@@ -294,6 +338,10 @@ steps:
     'sbg:y': 675.470703125
   - id: chipvar_processing
     in:
+      - id: output_maf_name_filter
+        source: output_maf_name_filter
+      - id: output_maf_name_tag
+        source: output_maf_name_tag
       - id: input_variant_annotated_maf
         source: variant_annotation/output_panmyeloid_maf
     out:

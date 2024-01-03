@@ -46,6 +46,11 @@ opOncoKbMafName: sampleName_oncokb.maf
 output_complexity_filename: sampleName_complexity.maf
 output_mappability_filename: sampleName_mappability.maf
 output_vcf2mafName: sampleName_vcf2maf.maf
+output_maf_name_panmyeloid: sampleName_panmyeloid.maf
+output_47kchpd_maf_name: sampleName_47kchpd.maf
+output_hotspot_maf_name: sampleName_hotspot.maf
+output_maf_name_filer: sampleName_filtered.maf
+output_maf_name_tag: sampleName_tagged.maf
 concat_output_name: sampleName_concat.vcf.gz
 retain_info:  CNT,TUMOR_TYPE
 sample_name: sampleName
@@ -55,3 +60,6 @@ snpsift_countOpName: sampleName_snpsift_cosmic.vcf
 snpsift_prevalOpName: sampleName_snpsift_preval.vcf
 column_name_complexity: complexity
 column_name_mappability: mapability
+output_column_name_panmyeloid: panmyeloid
+output_column_name_47kchpd: 47kchpd
+output_column_name_hotspot: hotspot
