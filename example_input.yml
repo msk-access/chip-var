@@ -1,3 +1,7 @@
+reference_fasta: 
+ class: File
+ path: >-
+    /juno/work/access/production/resources/reference/current/Homo_sapiens_assembly19.fasta
 bedfile:
   class: File
   path: >-
@@ -14,11 +18,39 @@ input_cosmicprevalenceDB_vcf:
   class: File
   path: >-
     /work/cch/production/resources/cosmic/versions/v96/CosmicCodingMuts_GRCh37_processed.vcf.gz
-output_mafName: sampleName_chip-var.maf
-reference_fasta: 
- class: File
- path: >-
-    /juno/work/access/production/resources/reference/current/Homo_sapiens_assembly19.fasta
+input_complexity_bed: 
+  class: File
+  path:  >-
+    /work/bergerm1/bergerlab/sivaprk/chipvar_resources/rmsk_mod.bed
+input_mappability_bed: 
+  class: File
+  path:  >-
+    /work/bergerm1/bergerlab/sivaprk/chipvar_resources/wgEncodeDacMapabilityConsensusExcludable_4cols.bed
+oncoKbApiToken: 
+  class: File
+  path:  >-
+    /work/bergerm1/bergerlab/sivaprk/chipvar_resources/apiToken.txt
+input_47kchpd_tsv_file: 
+  class: File
+  path: >-
+    /work/bergerm1/bergerlab/sivaprk/chipvar_resources/chpd47k_prevalence.tsv
+input_hotspot_tsv_file: 
+  class: File
+  path: >-
+    /work/bergerm1/bergerlab/sivaprk/chipvar_resources/hotspots_47kchpd.tsv
+input_panmeloid_tsv_file: 
+  class: File
+  path: >-
+    /work/bergerm1/bergerlab/sivaprk/chipvar_resources/pan_myeloid_ks.tsv 
+opOncoKbMafName: sampleName_oncokb.maf
+output_complexity_filename: sampleName_complexity.maf
+output_mappability_filename: sampleName_mappability.maf
+output_vcf2mafName: sampleName_vcf2maf.maf
+output_maf_name_panmyeloid: sampleName_panmyeloid.maf
+output_47kchpd_maf_name: sampleName_47kchpd.maf
+output_hotspot_maf_name: sampleName_hotspot.maf
+output_maf_name_filer: sampleName_filtered.maf
+output_maf_name_tag: sampleName_tagged.maf
 concat_output_name: sampleName_concat.vcf.gz
 retain_info:  CNT,TUMOR_TYPE
 sample_name: sampleName
@@ -26,3 +58,8 @@ vardict_allele_frequency_threshold: 0
 vardict_output_vcf_name: sampleName_vardict.vcf
 snpsift_countOpName: sampleName_snpsift_cosmic.vcf
 snpsift_prevalOpName: sampleName_snpsift_preval.vcf
+column_name_complexity: complexity
+column_name_mappability: mapability
+output_column_name_panmyeloid: panmyeloid
+output_column_name_47kchpd: 47kchpd
+output_column_name_hotspot: hotspot
