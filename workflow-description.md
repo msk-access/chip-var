@@ -2,12 +2,11 @@
 
 CHIP-VAR workflow consists of multiple sub-workflows, written in Common Workflow Language (CWL). Figure 1 shows the complete pipeline grouped according to functionality.&#x20;
 
-The 4 major steps in the order of working are&#x20;
+The 3 major steps in the order of working are&#x20;
 
 1. Variant Calling,
 2. Variant Annotation,
-3. Filtering and&#x20;
-4. Tagging.&#x20;
+3. Filtering and Tagging
 
 The pipeline is run for every sample in a project and finally, the results from all the samples in a particular project are then combined to further filter for artifacts and likely germline variants.&#x20;
 
