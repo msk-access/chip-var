@@ -1,4 +1,10 @@
-# Inputs and Outputs
+---
+description: Input files and parameters required to run workflow
+---
+
+# Inputs Description
+
+Common workflow language execution engines accept two types of input that are [JSON](https://json.org) or [YAML](https://yaml.org), please make sure to use one of these while generating the input file. For more information refer to: [http://www.commonwl.org/user\_guide/yaml/](http://www.commonwl.org/user\_guide/yaml/)
 
 ## Example Input YML file to run the CWL&#x20;
 
@@ -64,30 +70,4 @@ column_name_mappability: mapability
 
 
 
-## List of Output Files
-
-All the files are prefixed with the given Sample name.&#x20;
-
-**Variant calling**&#x20;
-
-* vardict\_STDFilter.txt&#x20;
-* vardict\_concatenated.vcf&#x20;
-
-**Annotation and tagging**
-
-* cosmic\_count\_annotated.vcf&#x20;
-* cosmic\_prevalence\_annotated.vcf&#x20;
-* vcf2maf.maf&#x20;
-* oncokb.maf&#x20;
-* mapability.maf&#x20;
-* complexity.maf&#x20;
-* hotspot.maf&#x20;
-* 47kchpd.maf&#x20;
-* panmyeloid.maf&#x20;
-
-**Filtering**&#x20;
-
-* cmoch\_filtered.maf&#x20;
-* cmoch\_tag.maf
-
-sampleName\_cmoch\_tag.maf MAF file is the final file to use.
+##

@@ -4,4 +4,6 @@
 * [Workflow Description](workflow-description.md)
 * [Requirements](requirements.md)
 * [Installation and Usage](installation-and-usage.md)
-* [Inputs and Outputs](inputs-and-outputs.md)
+* [Tools Description](tools-description.md)
+* [Inputs Description](inputs-description.md)
+* [Output Description](output-description.md)
