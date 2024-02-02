@@ -6,7 +6,7 @@ description: Files present after workflow is finished
 
 
 
-| Output File                                    | Description                                                                                      |
+| **Output File**                                | **Description**                                                                                  |
 | ---------------------------------------------- | ------------------------------------------------------------------------------------------------ |
 | sample-name\_vardict\_STDFilter.txt            |                                                                                                  |
 | sample-name\_single\_filter\_vcf               | VCF file with filtered SNPs                                                                      |
