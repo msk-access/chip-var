@@ -8,7 +8,7 @@ description: Files present after workflow is finished
 
 | **Output File**                                | **Description**                                                                                  |
 | ---------------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| sample-name\_vardict\_STDFilter.txt            |                                                                                                  |
+| sample-name\_vardict\_STDFilter.txt            | TXT file containing basic information on calls                                                   |
 | sample-name\_single\_filter\_vcf               | VCF file with filtered SNPs                                                                      |
 | sample-name\_single\_filer\_complex.vcf        | VCF file with filtered complex variants                                                          |
 | sample-name\_vardict\_concatenated.vcf         | VCF file with both complex and simple Variants                                                   |
