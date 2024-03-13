@@ -7,3 +7,4 @@
 * [Tools Description](tools-description.md)
 * [Inputs Description](inputs-description.md)
 * [Output Description](output-description.md)
+* [Usage of individual commands](usage-of-individual-commands.md)
