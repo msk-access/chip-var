@@ -1,7 +1,5 @@
 # Usage of individual commands
 
-**Part 1 :  Vairant Calling:** Variants are called from the BAM file using VARDICT tools and then a basic filtering is done. this VCF file is then processed to normalize, sort and concat both the complex and single variants.&#x20;
-
 **Vardict v1.8.2**
 
 <pre class="language-bash"><code class="lang-bash">/usr/bin/vardict/bin/VarDict -f "0" \
