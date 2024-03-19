@@ -14,7 +14,8 @@ This set of variants is then marked as either High Confidence \[HC] CH-PD \[CH P
 
 <figure><img src=".gitbook/assets/CHIPVAR_pipeline.jpeg" alt=""><figcaption></figcaption></figure>
 
+<figure><img src=".gitbook/assets/chipvar_vardict.jpeg" alt=""><figcaption></figcaption></figure>
+
 {% hint style="info" %}
 The bottom light pink box in the above image elaborates on the variant calling workflow using the VarDictJava tool which consists of: calling, sorting, normalizing, and concatenating the complex and normal variant VCF files.&#x20;
 {% endhint %}
-
